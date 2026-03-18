@@ -9,10 +9,6 @@ final class AudioManager: ObservableObject {
     @Published var defaultOutputDeviceID: AudioObjectID?
     @Published var defaultInputDeviceID: AudioObjectID?
 
-    private var deviceListenerAdded = false
-    private var defaultOutputListenerAdded = false
-    private var defaultInputListenerAdded = false
-
     init() {
         refresh()
         setupListeners()

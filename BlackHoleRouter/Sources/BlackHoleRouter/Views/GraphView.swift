@@ -81,7 +81,6 @@ struct GraphView: View {
     @ObservedObject var graphState: GraphState
 
     @State private var draggingDeviceID: AudioObjectID?
-    @State private var dragOffset: CGSize = .zero
     @State private var canvasOffset: CGSize = .zero
     @State private var canvasDragStart: CGSize = .zero
     @State private var pendingLineEnd: CGPoint? = nil
@@ -357,14 +356,6 @@ struct GraphView: View {
 
     private func updateSystemDefaultConnections() {
         graphState.removeAllSystemDefaultConnections()
-
-        // Default output chain: shows which device is receiving system audio
-        if let outputID = audioManager.defaultOutputDeviceID {
-            // If default output is BlackHole Sink, show connection from "System" → Sink
-            // We represent this as a self-loop indicator instead of a connection
-            // to a non-existent "System" node. Mark it for visual distinction.
-            _ = outputID // used as marker in sidebar
-        }
 
         // Show BlackHole internal routing: Sink → Source (the ring buffer)
         let sinkDevices = audioManager.devices.filter { $0.isBlackHoleSink }
