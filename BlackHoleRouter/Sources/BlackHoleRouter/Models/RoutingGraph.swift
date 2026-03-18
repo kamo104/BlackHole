@@ -69,8 +69,11 @@ final class RoutingGraph: ObservableObject {
         nodePositions[nodeID] = position
     }
 
+    /// The position returned for nodes that have not yet been laid out.
+    static let defaultNodePosition = CGPoint(x: 400, y: 300)
+
     func getPosition(for nodeID: RoutingNodeID) -> CGPoint {
-        nodePositions[nodeID] ?? CGPoint(x: 400, y: 300)
+        nodePositions[nodeID] ?? RoutingGraph.defaultNodePosition
     }
 
     // MARK: - Connection Management

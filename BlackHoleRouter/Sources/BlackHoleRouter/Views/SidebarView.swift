@@ -28,8 +28,18 @@ struct SidebarView: View {
                 VStack(alignment: .leading, spacing: 0) {
 
                     // ── App Streams ──────────────────────────────────────────────────
-                    let playbackApps  = processManager.audioProcesses.filter { $0.isRunningOutput }
+                    let dualRoleApps  = processManager.audioProcesses.filter { $0.isRunningOutput && $0.isRunningInput }
+                    let playbackApps  = processManager.audioProcesses.filter { $0.isRunningOutput && !$0.isRunningInput }
                     let recordingApps = processManager.audioProcesses.filter { $0.isRunningInput && !$0.isRunningOutput }
+
+                    if !dualRoleApps.isEmpty {
+                        sectionHeader("Play + Record",
+                                      icon: "waveform.badge.mic",
+                                      color: RouterTheme.ioDeviceColor)
+                        ForEach(dualRoleApps) { app in
+                            appRow(app)
+                        }
+                    }
 
                     if !playbackApps.isEmpty {
                         sectionHeader("Playback Apps",

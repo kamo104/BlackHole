@@ -33,9 +33,10 @@ final class RoutingEngine: ObservableObject {
             case .tapCreationFailed(let s):  return "Process tap creation failed (OSStatus \(s))"
             case .engineSetupFailed(let s):  return "AVAudioEngine setup failed (OSStatus \(s))"
             case .unsupportedPlatform:
-                return "Process Audio Tap routing requires macOS 14.2 or later. " +
-                       "The graph connection is shown visually; ensure the app uses " +
-                       "the correct BlackHole device in its own audio preferences."
+                return "Live per-app routing requires macOS 14.2 or later. " +
+                       "On this system, manually set each app's audio output to the " +
+                       "BlackHole Sink (and input to the BlackHole Source) in its own " +
+                       "audio settings — the graph will show inferred connections automatically."
             }
         }
     }
@@ -54,6 +55,10 @@ final class RoutingEngine: ObservableObject {
     // MARK: - Private
 
     private var routes: [UUID: TapRoute] = [:]
+
+    // Default tap format fallbacks when CoreAudio reports no format
+    private static let defaultChannelCount: AVAudioChannelCount = 2
+    private static let defaultSampleRate: Double = 48_000.0
 
     // MARK: - Public Interface
 
@@ -135,8 +140,10 @@ final class RoutingEngine: ObservableObject {
         var asbdSize = UInt32(MemoryLayout<AudioStreamBasicDescription>.size)
         AudioObjectGetPropertyData(tapID, &fmtAddr, 0, nil, &asbdSize, &asbd)
 
-        let channelCount = asbd.mChannelsPerFrame > 0 ? AVAudioChannelCount(asbd.mChannelsPerFrame) : 2
-        let sampleRate   = asbd.mSampleRate > 0 ? asbd.mSampleRate : 48_000.0
+        let channelCount = asbd.mChannelsPerFrame > 0
+            ? AVAudioChannelCount(asbd.mChannelsPerFrame)
+            : Self.defaultChannelCount
+        let sampleRate = asbd.mSampleRate > 0 ? asbd.mSampleRate : Self.defaultSampleRate
         guard let format = AVAudioFormat(standardFormatWithSampleRate: sampleRate,
                                          channels: channelCount)
         else { throw RoutingError.engineSetupFailed(kAudioUnitErr_InvalidParameter) }

@@ -362,7 +362,7 @@ struct GraphView: View {
         let layout = NodeLayout.autoLayout(devices: audioManager.devices,
                                            apps: processManager.audioProcesses)
         for (nodeID, pos) in layout {
-            if routingGraph.getPosition(for: nodeID) == CGPoint(x: 400, y: 300) {
+            if routingGraph.getPosition(for: nodeID) == RoutingGraph.defaultNodePosition {
                 routingGraph.setPosition(pos, for: nodeID)
             }
         }
