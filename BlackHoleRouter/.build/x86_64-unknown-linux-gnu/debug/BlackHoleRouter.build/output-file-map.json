@@ -1,0 +1,54 @@
+{
+  "": {
+    "swift-dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/master.swiftdeps"
+  },
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/BlackHoleRouterApp.swift": {
+    "dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouterApp.d",
+    "object": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouterApp.swift.o",
+    "swiftmodule": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouterApp~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouterApp.swiftdeps",
+    "diagnostics": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouterApp.dia"
+  },
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Models/AudioDeviceModel.swift": {
+    "dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioDeviceModel.d",
+    "object": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioDeviceModel.swift.o",
+    "swiftmodule": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioDeviceModel~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioDeviceModel.swiftdeps",
+    "diagnostics": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioDeviceModel.dia"
+  },
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Services/AudioManager.swift": {
+    "dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioManager.d",
+    "object": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioManager.swift.o",
+    "swiftmodule": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioManager~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioManager.swiftdeps",
+    "diagnostics": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioManager.dia"
+  },
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/ContentView.swift": {
+    "dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/ContentView.d",
+    "object": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/ContentView.swift.o",
+    "swiftmodule": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/ContentView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/ContentView.swiftdeps",
+    "diagnostics": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/ContentView.dia"
+  },
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/DeviceNodeView.swift": {
+    "dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/DeviceNodeView.d",
+    "object": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/DeviceNodeView.swift.o",
+    "swiftmodule": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/DeviceNodeView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/DeviceNodeView.swiftdeps",
+    "diagnostics": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/DeviceNodeView.dia"
+  },
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/GraphView.swift": {
+    "dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/GraphView.d",
+    "object": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/GraphView.swift.o",
+    "swiftmodule": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/GraphView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/GraphView.swiftdeps",
+    "diagnostics": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/GraphView.dia"
+  },
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/SidebarView.swift": {
+    "dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/SidebarView.d",
+    "object": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/SidebarView.swift.o",
+    "swiftmodule": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/SidebarView~partial.swiftmodule",
+    "swift-dependencies": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/SidebarView.swiftdeps",
+    "diagnostics": "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/SidebarView.dia"
+  }
+}

@@ -1,0 +1,73 @@
+client:
+  name: basic
+  file-system: device-agnostic
+tools: {}
+targets:
+  "BlackHoleRouter-x86_64-unknown-linux-gnu-debug.exe": ["<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.exe>"]
+  "BlackHoleRouter-x86_64-unknown-linux-gnu-debug.module": ["<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.module>"]
+  "PackageStructure": ["<PackageStructure>"]
+  "main": ["<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.exe>","<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.module>"]
+  "test": ["<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.exe>","<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.module>"]
+default: "main"
+nodes:
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/":
+    is-directory-structure: true
+    content-exclusion-patterns: [".git",".build"]
+commands:
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouter.swiftmodule.o":
+    tool: shell
+    inputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/Modules/BlackHoleRouter.swiftmodule"]
+    outputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouter.swiftmodule.o"]
+    description: "Wrapping AST for BlackHoleRouter for debugging"
+    args: ["/usr/share/swift/usr/bin/swiftc","-modulewrap","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/Modules/BlackHoleRouter.swiftmodule","-o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouter.swiftmodule.o","-target","x86_64-unknown-linux-gnu"]
+
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/sources":
+    tool: write-auxiliary-file
+    inputs: ["<sources-file-list>","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/BlackHoleRouterApp.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Models/AudioDeviceModel.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Services/AudioManager.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/ContentView.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/DeviceNodeView.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/GraphView.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/SidebarView.swift"]
+    outputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/sources"]
+    description: "Write auxiliary file /home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/sources"
+
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.product/Objects.LinkFileList":
+    tool: write-auxiliary-file
+    inputs: ["<link-file-list>","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioDeviceModel.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioManager.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouter.swiftmodule.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouterApp.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/ContentView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/DeviceNodeView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/GraphView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/SidebarView.swift.o"]
+    outputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.product/Objects.LinkFileList"]
+    description: "Write auxiliary file /home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.product/Objects.LinkFileList"
+
+  "/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt":
+    tool: write-auxiliary-file
+    inputs: ["<swift-get-version>","/usr/share/swift/usr/bin/swiftc"]
+    outputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt"]
+    always-out-of-date: "true"
+    description: "Write auxiliary file /home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt"
+
+  "<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.exe>":
+    tool: phony
+    inputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter"]
+    outputs: ["<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.exe>"]
+
+  "<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.module>":
+    tool: phony
+    inputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouterApp.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioDeviceModel.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioManager.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/ContentView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/DeviceNodeView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/GraphView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/SidebarView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/Modules/BlackHoleRouter.swiftmodule"]
+    outputs: ["<BlackHoleRouter-x86_64-unknown-linux-gnu-debug.module>"]
+
+  "C.BlackHoleRouter-x86_64-unknown-linux-gnu-debug.exe":
+    tool: shell
+    inputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioDeviceModel.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioManager.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouter.swiftmodule.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouterApp.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/ContentView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/DeviceNodeView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/GraphView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/SidebarView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.product/Objects.LinkFileList"]
+    outputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter"]
+    description: "Linking ./.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter"
+    args: ["/usr/share/swift/usr/bin/swiftc","-L","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug","-o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter","-module-name","BlackHoleRouter","-emit-executable","-Xlinker","--defsym","-Xlinker","main=BlackHoleRouter_main","-Xlinker","-rpath=$ORIGIN","@/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.product/Objects.LinkFileList","-target","x86_64-unknown-linux-gnu","-g"]
+
+  "C.BlackHoleRouter-x86_64-unknown-linux-gnu-debug.module":
+    tool: shell
+    inputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/BlackHoleRouterApp.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Models/AudioDeviceModel.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Services/AudioManager.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/ContentView.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/DeviceNodeView.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/GraphView.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/Views/SidebarView.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/swift-version--1BFCD5C06E9F820A.txt","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/sources"]
+    outputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/BlackHoleRouterApp.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioDeviceModel.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/AudioManager.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/ContentView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/DeviceNodeView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/GraphView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/SidebarView.swift.o","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/Modules/BlackHoleRouter.swiftmodule"]
+    description: "Compiling Swift Module 'BlackHoleRouter' (7 sources)"
+    args: ["/usr/share/swift/usr/bin/swiftc","-module-name","BlackHoleRouter","-emit-dependencies","-emit-module","-emit-module-path","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/Modules/BlackHoleRouter.swiftmodule","-output-file-map","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/output-file-map.json","-incremental","-c","@/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/BlackHoleRouter.build/sources","-I","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/Modules","-target","x86_64-unknown-linux-gnu","-incremental","-enable-batch-mode","-serialize-diagnostics","-index-store-path","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/index/store","-Onone","-enable-testing","-j4","-DSWIFT_PACKAGE","-DDEBUG","-DSWIFT_MODULE_RESOURCE_BUNDLE_UNAVAILABLE","-module-cache-path","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/.build/x86_64-unknown-linux-gnu/debug/ModuleCache","-parseable-output","-Xfrontend","-entry-point-function-name","-Xfrontend","BlackHoleRouter_main","-swift-version","5","-g","-Xcc","-fPIC","-Xcc","-g","-package-name","blackholerouter","-Xcc","-fno-omit-frame-pointer"]
+
+  "PackageStructure":
+    tool: package-structure-tool
+    inputs: ["/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Sources/BlackHoleRouter/","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Package.swift","/home/runner/work/BlackHole/BlackHole/BlackHoleRouter/Package.resolved"]
+    outputs: ["<PackageStructure>"]
+    description: "Planning build"
+    allow-missing-inputs: true
+

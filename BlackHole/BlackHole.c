@@ -174,11 +174,11 @@ struct ObjectInfo {
 
 
 #ifndef kDevice_Name
-#define                             kDevice_Name                        kDriver_Name " %ich"
+#define                             kDevice_Name                        kDriver_Name " %ich Sink"
 #endif
 
 #ifndef kDevice2_Name
-#define                             kDevice2_Name                       kDriver_Name " %ich 2"
+#define                             kDevice2_Name                       kDriver_Name " %ich Source"
 #endif
 
 
@@ -190,11 +190,11 @@ struct ObjectInfo {
 
 
 #ifndef kDevice_Name
-#define                             kDevice_Name                        kDriver_Name " "
+#define                             kDevice_Name                        kDriver_Name " Sink"
 #endif
 
 #ifndef kDevice2_Name
-#define                             kDevice2_Name                       kDriver_Name " Mirror"
+#define                             kDevice2_Name                       kDriver_Name " Source"
 #endif
 
 #endif
@@ -204,13 +204,13 @@ struct ObjectInfo {
 #endif
 
 #ifndef kDevice2_IsHidden
-#define                             kDevice2_IsHidden                   true
+#define                             kDevice2_IsHidden                   false
 #endif
 
 
 
 #ifndef kDevice_HasInput
-#define                             kDevice_HasInput                    true
+#define                             kDevice_HasInput                    false
 #endif
 
 #ifndef kDevice_HasOutput
@@ -222,7 +222,7 @@ struct ObjectInfo {
 #endif
 
 #ifndef kDevice2_HasOutput
-#define                             kDevice2_HasOutput                  true
+#define                             kDevice2_HasOutput                  false
 #endif
 
 
