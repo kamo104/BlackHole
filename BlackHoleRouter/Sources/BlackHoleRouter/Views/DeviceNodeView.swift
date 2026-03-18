@@ -17,6 +17,7 @@ enum RouterTheme {
 
     static let portSize: CGFloat = 12
     static let nodeWidth: CGFloat = 180
+    static let appNodeWidth: CGFloat = 172
     static let nodeHeaderHeight: CGFloat = 36
     static let nodeRowHeight: CGFloat = 28
     static let nodeCornerRadius: CGFloat = 8
